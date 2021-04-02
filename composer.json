@@ -1,0 +1,42 @@
+{
+    "name": "extremecreations/exceptions-to-stream",
+    "description": "A small plugin to capture all thrown exceptions to send to standard error stream",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "exceptions to stream"
+    ],
+    "support": {
+        "docs": "https://github.com/extreme-creations/craft-exceptionstostream/blob/master/README.md",
+        "issues": "https://github.com/extreme-creations/craft-exceptionstostream/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joe Pagan",
+            "homepage": "https://madebyextreme.com/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "monolog/monolog": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+          "extremecreations\\exceptionstostream\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Exceptions To Stream",
+        "handle": "exceptions-to-stream",
+        "developer": "Joe Pagan",
+        "developerUrl": "https://madebyextreme.com/",
+        "documentationUrl": "https://github.com/extreme-creations/craft-exceptionstostream/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/extreme-creations/craft-exceptionstostream/master/CHANGELOG.md",
+        "class": "extremecreations\\exceptionstostream\\ExceptionsToStream"
+    }
+}
