@@ -65,11 +65,11 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
-                $logger = new Logger('app'));
+                $logger = new Logger('app');
                 $logger->pushHandler(new StreamHandler('php://stderr', \Monolog\Logger::WARNING));
                 $logger->critical($event->exception);
             }
-      );
+        );
 
         Craft::info(
             Craft::t(
