@@ -76,8 +76,9 @@ class ExceptionsToStream extends Plugin
                 $formatter = new LineFormatter($output, $dateFormat);
                 $formatter->allowInlineLineBreaks();
                 $formatter->includeStacktraces();
-                $logger->setFormatter($formatter);
-                $logger->pushHandler(new StreamHandler('php://stderr', \Monolog\Logger::WARNING));
+                $stream = new StreamHandler('php://stderr', \Monolog\Logger::WARNING);
+                $stream->setFormatter($formatter);
+                $logger->pushHandler($stream);
                 $logger->critical($event->exception);
             }
         );
