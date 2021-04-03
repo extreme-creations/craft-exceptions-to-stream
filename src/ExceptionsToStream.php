@@ -66,7 +66,7 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
-                $logger = new Logger();
+                $logger = new Logger('app');
                 $lineFormatter = new LineFormatter();
                 $lineFormatter->allowInlineLineBreaks();
                 $lineFormatter->includeStacktraces();
