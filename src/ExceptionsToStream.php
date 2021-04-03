@@ -66,6 +66,14 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
+                // Get status code
+                $statusCode = $exception->statusCode ?? null;
+
+                // Check if we should skip status code
+                if (preg_match('/4[0-9][0-9]/', $statusCode)) {
+                    return;
+                }
+
                 // Create a Logger
                 $logger = new Logger('app');
                 // Create a LineFormatter
