@@ -2,7 +2,7 @@
 /**
  * Exceptions To Stream plugin for Craft CMS 3.x
  *
- * A small plugin to capture all thrown exceptions to send to standard error stream
+ * A small plugin to capture thrown exceptions (excluding status codes in the 400 range) to send to standard error stream
  *
  * @link      https://madebyextreme.com/
  * @copyright Copyright (c) 2021 Extreme
