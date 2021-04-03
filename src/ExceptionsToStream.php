@@ -67,10 +67,16 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
                 $logger = new Logger('app');
-                $lineFormatter = new LineFormatter();
-                $lineFormatter->allowInlineLineBreaks();
-                $lineFormatter->includeStacktraces();
-                $logger->setFormatter($lineFormatter);
+
+                // the default date format is "Y-m-d\TH:i:sP"
+                $dateFormat = "Y-m-d\TH:i:sP";
+                // the default output format is "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n"
+                $output = "[%datetime%] %channel%.%level_name%: %message% %context% %extra%\n";
+                // finally, create a formatter
+                $formatter = new LineFormatter($output, $dateFormat);
+                $formatter->allowInlineLineBreaks();
+                $formatter->includeStacktraces();
+                $logger->setFormatter($formatter);
                 $logger->pushHandler(new StreamHandler('php://stderr', \Monolog\Logger::WARNING));
                 $logger->critical($event->exception);
             }
