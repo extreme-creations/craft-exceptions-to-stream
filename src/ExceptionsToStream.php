@@ -22,7 +22,7 @@ use yii\base\Event;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use \Monolog\Formatter\LineFormatter;
+use Monolog\Formatter\LineFormatter;
 
 /**
  * Class ExceptionsToStream
