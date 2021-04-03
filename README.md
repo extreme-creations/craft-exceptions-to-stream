@@ -1,8 +1,10 @@
 # Exceptions To Stream plugin for Craft CMS 3.x
 
-A small plugin to capture all thrown exceptions to send to standard error stream
+A small plugin to capture thrown exceptions (excluding status codes in the 400 range) to send to standard error stream
 
 ![Screenshot](resources/img/plugin-logo.png)
+
+Icons by [svgrepo.com](https://www.svgrepo.com/svg/38944/river) & [pngrepo.com](https://www.pngrepo.com/svg/129426/river)
 
 ## Requirements
 
@@ -22,22 +24,4 @@ To install the plugin, follow these instructions.
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Exceptions To Stream.
 
-## Exceptions To Stream Overview
-
--Insert text here-
-
-## Configuring Exceptions To Stream
-
--Insert text here-
-
-## Using Exceptions To Stream
-
--Insert text here-
-
-## Exceptions To Stream Roadmap
-
-Some things to do, and ideas for potential features:
-
-* Release it
-
-Brought to you by [Joe Pagan](https://madebyextreme.com/)
+Brought to you by [Extreme](https://madebyextreme.com/)

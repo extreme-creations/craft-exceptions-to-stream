@@ -17,7 +17,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Joe Pagan",
+            "name": "Extreme",
             "homepage": "https://madebyextreme.com/"
         }
     ],
@@ -33,7 +33,7 @@
     "extra": {
         "name": "Exceptions To Stream",
         "handle": "exceptions-to-stream",
-        "developer": "Joe Pagan",
+        "developer": "Extreme",
         "developerUrl": "https://madebyextreme.com/",
         "documentationUrl": "https://github.com/extreme-creations/craft-exceptionstostream/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/extreme-creations/craft-exceptionstostream/master/CHANGELOG.md",

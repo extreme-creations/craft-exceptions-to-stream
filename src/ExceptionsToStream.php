@@ -5,7 +5,7 @@
  * A small plugin to capture all thrown exceptions to send to standard error stream
  *
  * @link      https://madebyextreme.com/
- * @copyright Copyright (c) 2021 Joe Pagan
+ * @copyright Copyright (c) 2021 Extreme
  */
 
 namespace extremecreations\exceptionstostream;
@@ -27,7 +27,7 @@ use Monolog\Formatter\LineFormatter;
 /**
  * Class ExceptionsToStream
  *
- * @author    Joe Pagan
+ * @author    Extreme
  * @package   ExceptionsToStream
  * @since     1.0.0
  *
