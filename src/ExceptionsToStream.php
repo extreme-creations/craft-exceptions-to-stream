@@ -22,6 +22,7 @@ use yii\base\Event;
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
+use \Monolog\Formatter\LineFormatter;
 
 /**
  * Class ExceptionsToStream
@@ -65,7 +66,11 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
-                $logger = new Logger('app');
+                $logger = new Logger();
+                $lineFormatter = new LineFormatter();
+                $lineFormatter->allowInlineLineBreaks();
+                $lineFormatter->includeStacktraces();
+                $logger->setFormatter($formatter);
                 $logger->pushHandler(new StreamHandler('php://stderr', \Monolog\Logger::WARNING));
                 $logger->critical($event->exception);
             }
