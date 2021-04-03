@@ -14,14 +14,29 @@ This plugin requires Craft CMS 3.0.0-beta.23 or later.
 
 To install the plugin, follow these instructions.
 
-1. Open your terminal and go to your Craft project:
+1. Open your terminal and go to your Craft project where your `composer.json` exists:
 
         cd /path/to/project
 
-2. Then tell Composer to load the plugin:
+2. Updated `composer.json`:
 
-        composer require extreme-creations/craft-exceptionstostream
+        "repositories": [
+          {
+            "type": "vcs",
+            "url": "https://github.com/extreme-creations/craft-exceptionstostream.git"
+          }
+        ]
 
-3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Exceptions To Stream.
+3. Then tell Composer to load the plugin:
+
+        composer require extremecreations/exceptions-to-stream:dev-master#v1.0.0
+        or
+        docker-compose exec php bash -c "cd /var/www/site/craft/ && composer require extremecreations/exceptions-to-stream:dev-master#v1.0.0"
+
+4. In the Control Panel, go to Settings → Plugins and click the “Install” button for Exceptions To Stream, Or:
+
+        ./craft plugin/install exceptions-to-stream
+        or
+        docker-compose exec php bash -c "cd /var/www/site/craft/ && ./craft plugin/install exceptions-to-stream"
 
 Brought to you by [Extreme](https://madebyextreme.com/)
