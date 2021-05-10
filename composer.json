@@ -1,5 +1,5 @@
 {
-    "name": "extremecreations/exceptions-to-stream",
+    "name": "madebyextreme/exceptions-to-stream",
     "description": "A small plugin to capture thrown exceptions (excluding status codes in the 400 range) to send to standard error stream",
     "type": "craft-plugin",
     "version": "1.0.0",
@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-          "extremecreations\\exceptionstostream\\": "src/"
+          "madebyextreme\\exceptionstostream\\": "src/"
         }
     },
     "extra": {
@@ -37,6 +37,6 @@
         "developerUrl": "https://madebyextreme.com/",
         "documentationUrl": "https://github.com/extreme-creations/craft-exceptionstostream/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/extreme-creations/craft-exceptionstostream/master/CHANGELOG.md",
-        "class": "extremecreations\\exceptionstostream\\ExceptionsToStream"
+        "class": "madebyextreme\\exceptionstostream\\ExceptionsToStream"
     }
 }

@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2021 Extreme
  */
 
-namespace extremecreations\exceptionstostream;
+namespace madebyextreme\exceptionstostream;
 
 use Craft;
 use craft\base\Plugin;
