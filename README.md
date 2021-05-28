@@ -31,7 +31,7 @@ To install the plugin, follow these instructions.
 
         composer require madebyextreme/exceptions-to-stream:dev-master#v1.0.0
         or
-        docker-compose exec php bash -c "cd /var/www/site/craft/ && composer require madebyextreme/exceptions-to-stream:dev-master#v1.0.0"
+        docker-compose exec php bash -c "cd /var/www/site/craft/ && composer require madebyextreme/exceptions-to-stream"
 
 4. In the Control Panel, go to Settings → Plugins and click the “Install” button for Exceptions To Stream, Or:
 
