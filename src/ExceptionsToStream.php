@@ -66,8 +66,20 @@ class ExceptionsToStream extends Plugin
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
             function(ExceptionEvent $event) {
+                Craft::debug(
+                    'ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION',
+                    __METHOD__
+                );
+                $exception = $event->exception;
+
+                // If this is a Twig Runtime exception, use the previous one instead
+                if ($exception instanceof \Twig\Error\RuntimeError &&
+                    ($previousException = $exception->getPrevious()) !== null) {
+                    $exception = $previousException;
+                }
+
                 // Get status code
-                $statusCode = $event->exception->statusCode ?? null;
+                $statusCode = $exception->statusCode ?? null;
 
                 // Check if we should skip status code
                 if (preg_match('/4[0-9][0-9]/', $statusCode)) {
@@ -89,7 +101,7 @@ class ExceptionsToStream extends Plugin
                 // Push the stream to logger
                 $logger->pushHandler($stream);
                 // Send all exceptions to logger
-                $logger->critical($event->exception);
+                $logger->critical($exception);
             }
         );
 
