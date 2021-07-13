@@ -20,9 +20,7 @@ use craft\web\ErrorHandler;
 
 use yii\base\Event;
 
-use Monolog\Logger;
-use Monolog\Handler\StreamHandler;
-use Monolog\Formatter\LineFormatter;
+use madebyextreme\services\LoggerService;
 
 /**
  * Class ExceptionsToStream
@@ -78,30 +76,8 @@ class ExceptionsToStream extends Plugin
                     $exception = $previousException;
                 }
 
-                // Get status code
-                $statusCode = $exception->statusCode ?? null;
-
-                // Check if we should skip status code
-                if (preg_match('/4[0-9][0-9]/', $statusCode)) {
-                    return;
-                }
-
-                // Create a Logger
-                $logger = new Logger('app');
-                // Create a LineFormatter
-                $formatter = new LineFormatter();
-                // Allow inline line breaks
-                $formatter->allowInlineLineBreaks();
-                // Include stack traces
-                $formatter->includeStacktraces();
-                // Create a stream
-                $stream = new StreamHandler('php://stderr', \Monolog\Logger::WARNING);
-                // Set the formatter for the stream
-                $stream->setFormatter($formatter);
-                // Push the stream to logger
-                $logger->pushHandler($stream);
-                // Send all exceptions to logger
-                $logger->critical($exception);
+                $loggerService = new LoggerService();
+                $loggerService->handleException($exception);
             }
         );
 
