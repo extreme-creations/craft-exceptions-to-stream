@@ -20,7 +20,7 @@ use craft\web\ErrorHandler;
 
 use yii\base\Event;
 
-use madebyextreme\services\LoggerService;
+use madebyextreme\exceptionstostream\services\LoggerService;
 
 /**
  * Class ExceptionsToStream

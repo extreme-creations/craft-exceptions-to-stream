@@ -1,6 +1,6 @@
 <?php
 
-namespace madebyextreme\services;
+namespace madebyextreme\exceptionstostream\services;
 
 use yii\base\Component;
 
