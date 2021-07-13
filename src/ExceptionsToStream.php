@@ -60,6 +60,11 @@ class ExceptionsToStream extends Plugin
         parent::init();
         self::$plugin = $this;
 
+        // Register service as a component
+        $this->setComponents([
+          'logger' => LoggerService::class,
+        ]);
+
         Event::on(
             ErrorHandler::className(),
             ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
