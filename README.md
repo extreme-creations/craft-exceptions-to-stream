@@ -6,6 +6,24 @@ A small plugin to capture thrown exceptions (excluding status codes in the 400 r
 
 Icons by [svgrepo.com](https://www.svgrepo.com/svg/38944/river) & [pngrepo.com](https://www.pngrepo.com/svg/129426/river)
 
+## Usage
+
+### Exceptions
+
+Exceptions should be handled automatically via the Craft event `ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION`.
+
+### Custom logging
+
+For sending custom logs to the stream `stdout`:
+
+1. Include the logger service where suitable in your plugin/module: `use madebyextreme\exceptionstostream\services\LoggerService;`
+2. Create a new service instance and call the method where appropriate:
+
+```php
+$logger = new LoggerService();
+$logger->log('hi');
+```
+
 ## Requirements
 
 This plugin requires Craft CMS 3.0.0-beta.23 or later.
