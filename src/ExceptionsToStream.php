@@ -62,7 +62,7 @@ class ExceptionsToStream extends Plugin
 
         // Register service as a component
         $this->setComponents([
-          'logger' => LoggerService::class,
+          'log' => LoggerService::class,
         ]);
 
         Event::on(
@@ -81,8 +81,7 @@ class ExceptionsToStream extends Plugin
                     $exception = $previousException;
                 }
 
-                $loggerService = new LoggerService();
-                $loggerService->handleException($exception);
+                $this->log->handleException($exception);
             }
         );
 

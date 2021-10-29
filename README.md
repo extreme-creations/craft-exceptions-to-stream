@@ -10,18 +10,26 @@ Icons by [svgrepo.com](https://www.svgrepo.com/svg/38944/river) & [pngrepo.com](
 
 ### Exceptions
 
-Exceptions should be handled automatically via the Craft event `ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION`.
+Exceptions thrown by craft will be handled automatically as this plugin listens to the Craft event `ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION`.
+This plugin would treat an exception thrown by Craft as `CRITICAL` level which appears to best match for a generic purpose when handling ALL potential exceptions.
+
+[Monolog's description](https://github.com/Seldaek/monolog/blob/main/doc/01-usage.md#log-levels) taken from RFC 5424 standard:
+
+> CRITICAL (500): Critical conditions. Example: Application component unavailable, unexpected exception.
 
 ### Custom logging
 
-For sending custom logs to the stream `stdout`:
-
-1. Include the logger service where suitable in your plugin/module: `use madebyextreme\exceptionstostream\services\LoggerService;`
-2. Create a new service instance and call the method where appropriate:
+For sending custom logs to the stream:
 
 ```php
-$logger = new LoggerService();
-$logger->log('hi');
+ExceptionsToStream::getInstance()->log->debug('message');
+ExceptionsToStream::getInstance()->log->info('message');
+ExceptionsToStream::getInstance()->log->notice('message');
+ExceptionsToStream::getInstance()->log->warning('message');
+ExceptionsToStream::getInstance()->log->error('message');
+ExceptionsToStream::getInstance()->log->critical('message');
+ExceptionsToStream::getInstance()->log->alert('message');
+ExceptionsToStream::getInstance()->log->emergency('message');
 ```
 
 ## Requirements
