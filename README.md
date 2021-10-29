@@ -22,14 +22,19 @@ This plugin would treat an exception thrown by Craft as `CRITICAL` level which a
 For sending custom logs to the stream:
 
 ```php
-ExceptionsToStream::getInstance()->log->debug('message');
-ExceptionsToStream::getInstance()->log->info('message');
-ExceptionsToStream::getInstance()->log->notice('message');
-ExceptionsToStream::getInstance()->log->warning('message');
-ExceptionsToStream::getInstance()->log->error('message');
-ExceptionsToStream::getInstance()->log->critical('message');
-ExceptionsToStream::getInstance()->log->alert('message');
-ExceptionsToStream::getInstance()->log->emergency('message');
+use madebyextreme\exceptionstostream\ExceptionsToStream;
+
+public function bob()
+{
+    ExceptionsToStream::getInstance()->log->debug('message');
+    ExceptionsToStream::getInstance()->log->info('message');
+    ExceptionsToStream::getInstance()->log->notice('message');
+    ExceptionsToStream::getInstance()->log->warning('message');
+    ExceptionsToStream::getInstance()->log->error('message');
+    ExceptionsToStream::getInstance()->log->critical('message');
+    ExceptionsToStream::getInstance()->log->alert('message');
+    ExceptionsToStream::getInstance()->log->emergency('message');
+}
 ```
 
 ## Requirements
