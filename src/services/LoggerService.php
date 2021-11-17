@@ -42,9 +42,7 @@ class LoggerService extends Component
 
     /**
      * info log
-     *
      * @param string $message
-     * @return void
      */
     public function info(string $message)
     {
@@ -55,9 +53,7 @@ class LoggerService extends Component
 
     /**
      * notice log
-     *
      * @param string $message
-     * @return void
      */
     public function notice(string $message)
     {
@@ -68,9 +64,7 @@ class LoggerService extends Component
 
     /**
      * warning log
-     *
      * @param string $message
-     * @return void
      */
     public function warning(string $message)
     {
@@ -81,9 +75,7 @@ class LoggerService extends Component
 
     /**
      * error log
-     *
      * @param string $message
-     * @return void
      */
     public function error(string $message)
     {
@@ -94,9 +86,7 @@ class LoggerService extends Component
 
     /**
      * critical log
-     *
      * @param string $message
-     * @return void
      */
     public function critical(string $message)
     {
@@ -107,9 +97,7 @@ class LoggerService extends Component
 
     /**
      * alert log
-     *
      * @param string $message
-     * @return void
      */
     public function alert(string $message)
     {
@@ -120,9 +108,7 @@ class LoggerService extends Component
 
     /**
      * alert log
-     *
      * @param string $message
-     * @return void
      */
     public function emergency(string $message)
     {
@@ -133,9 +119,7 @@ class LoggerService extends Component
 
     /**
      * Handle an exception and send to error stream
-     *
-     * @param [type] $exception
-     * @return void
+     * @param $exception
      */
     public function handleException($exception)
     {

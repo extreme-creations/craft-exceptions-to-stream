@@ -28,6 +28,7 @@ use madebyextreme\exceptionstostream\services\LoggerService;
  * @author    Extreme
  * @package   ExceptionsToStream
  * @since     1.0.0
+ * @property LoggerService $log
  *
  */
 class ExceptionsToStream extends Plugin
@@ -36,6 +37,11 @@ class ExceptionsToStream extends Plugin
      * @var ExceptionsToStream
      */
     public static $plugin;
+
+    /**
+     * @var mixed|object|null
+     */
+    private mixed $log;
 
     /**
      * @var string
