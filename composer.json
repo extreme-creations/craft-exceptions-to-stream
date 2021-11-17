@@ -2,7 +2,7 @@
     "name": "madebyextreme/exceptions-to-stream",
     "description": "A small plugin to capture thrown exceptions (excluding status codes in the 400 range) to send to standard error stream",
     "type": "craft-plugin",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "keywords": [
         "craft",
         "cms",
