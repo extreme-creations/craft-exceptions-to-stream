@@ -41,7 +41,7 @@ class ExceptionsToStream extends Plugin
     /**
      * @var mixed|object|null
      */
-    private $log;
+    private static $log;
 
     /**
      * @var string
